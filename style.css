@@ -1,0 +1,111 @@
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+   
+   body {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 100vh;
+       background-image: radial-gradient(ellipse at 50% 70%, hsla(210, 1%, 78%, 0.73), rgba(150, 150, 150, 0.7));
+   }
+   
+   .wrapper {
+       height: 350px;
+       width: 350px;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       border-radius: 60px;
+       background: #fff;
+       background-image: linear-gradient(#F2F2EF 40px, #C7C3BC);
+       box-shadow: 0 10px 10px 0 #626262;
+   }
+   
+   .clock {
+       width: 210px;
+       height: 210px;
+       border-radius: 50%;
+       background-image: linear-gradient(#f9fdff, #d9eaf8);
+       box-shadow: 0px 0px 28px -8px #C6C2BA;
+       position: relative;
+   }
+   
+   .clock>div {
+       position: absolute;
+       height: 210px;
+       width: 5px;
+       left: 50%;
+   }
+   
+   .clock .hour::after {
+       content: '';
+       height: 55px;
+       width: 4px;
+       position: absolute;
+       top: 67px;
+       left: 0px;
+       background: #1aa9d8;
+       border-radius: 8px 8px 8px 8px;
+   }
+   
+   .clock .minute:after {
+       content: "";
+       height: 70px;
+       width: 4px;
+       position: absolute;
+       top: 55px;
+       left: 0px;
+       background: #23bcef;
+       border-radius: 8px 8px 8px 8px;
+   }
+   
+   .clock .second::after {
+       content: "";
+       height: 93px;
+       width: 1px;
+       position: absolute;
+       top: 33px;
+       left: 0px;
+       background: #0dc1fd;
+   }
+   
+   .clock12 {
+       position: absolute;
+       left: 45%;
+       top: 15px;
+   }
+   
+   .clock3 {
+       position: absolute;
+       right: 15px;
+       top: 45%;
+   }
+   
+   .clock6 {
+       position: absolute;
+       left: 48%;
+       bottom: 15px;
+   }
+   
+   .clock9 {
+       position: absolute;
+       left: 15px;
+       top: 45%;
+   }
+   
+   .center {
+       display: inline-block;
+       width: 15px;
+       height: 15px;
+       border-radius: 50%;
+       position: absolute;
+       left: 50%;
+       top: 50%;
+       background: #8BA3B6;
+       box-shadow: 0px 3px 8px -1px #8BA3B6;
+       margin-left: -5px;
+       margin-top: -7.5px;
+   }

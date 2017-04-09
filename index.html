@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="clock">
+            <span class="clock12">12</span>
+            <span class="clock3">3</span>
+            <span class="clock6">6</span>
+            <span class="clock9">9</span>
+            <span class="center"></span>
+        </div>
+    </div>
+    <script>
+        var hourDiv = document.createElement('div')
+        var minuteDiv = document.createElement('div')
+        var secondDiv = document.createElement('div')
+        var clockDiv = document.querySelector('.clock')
+
+        clockDiv.appendChild(hourDiv)
+        clockDiv.appendChild(minuteDiv)
+        clockDiv.appendChild(secondDiv)
+
+        hourDiv.classList.add('hour')
+        minuteDiv.classList.add('minute')
+        secondDiv.classList.add('second')
+        var time = setInterval(function() {
+            let nowTime = new Date()
+            let hour = nowTime.getHours() % 12 //把大于12小时的转换成12以内
+            let minute = nowTime.getMinutes()
+            let second = nowTime.getSeconds()
+
+            hourDiv.style.transform = `rotate(${hour/12*360}deg)`
+            minuteDiv.style.transform = `rotate(${minute/60*360}deg)`
+            secondDiv.style.transform = `rotate(${second/60*360}deg)`
+        }, 1000)
+    </script>
+</body>
+
+</html>
