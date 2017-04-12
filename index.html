@@ -32,6 +32,15 @@
         hourDiv.classList.add('hour')
         minuteDiv.classList.add('minute')
         secondDiv.classList.add('second')
+        let nowTime = new Date()
+        let hour = nowTime.getHours() % 12 //把大于12小时的转换成12以内
+        let minute = nowTime.getMinutes()
+        let second = nowTime.getSeconds()
+        hourDiv.style.transform = `rotate(${hour/12*360}deg)`
+        minuteDiv.style.transform = `rotate(${minute/60*360}deg)`
+        secondDiv.style.transform = `rotate(${second/60*360}deg)`
+
+
         var time = setInterval(function() {
             let nowTime = new Date()
             let hour = nowTime.getHours() % 12 //把大于12小时的转换成12以内
@@ -41,6 +50,7 @@
             hourDiv.style.transform = `rotate(${hour/12*360}deg)`
             minuteDiv.style.transform = `rotate(${minute/60*360}deg)`
             secondDiv.style.transform = `rotate(${second/60*360}deg)`
+            console.log(second / 60 * 360)
         }, 1000)
     </script>
 </body>
